@@ -6,7 +6,7 @@ FROM ubuntu:latest
 RUN apt-get update && \
 apt-get install -y cmake libuv1 libuv1-dev libjansson4 libjansson-dev \
 libzip4 libzip-dev git clang automake autoconf libx264-dev libopus-dev yasm \
-pkg-config curl libcurl4-gnutls-dev && \
+pkg-config curl libcurl4-gnutls-dev libjpeg-dev libpng-dev && \
 curl -sL https://deb.nodesource.com/setup_8.x | bash - && \
 apt-get install nodejs && rm -rf /var/lib/apt/lists/*
 
@@ -16,9 +16,8 @@ WORKDIR /var/lib/barc/ext
 
 # Build deps: 1 of 2 - ImageMagick
 
-RUN git clone https://github.com/ImageMagick/ImageMagick.git && \
+RUN git clone https://github.com/ImageMagick/ImageMagick.git --branch 7.0.4-5 && \
 cd ImageMagick && \
-git checkout 7.0.4-5 && \
 ./configure '--with-png=yes' '--with-jpeg=yes' && \
 make && \
 make install && \
