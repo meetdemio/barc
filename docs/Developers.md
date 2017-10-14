@@ -5,7 +5,7 @@
 This repo has included submodules, please clone it with `--recursive` flag.
 
 ```
-git clone https://github.com/wobbals/barc.git --recursive
+git clone https://github.com/meetdemio/barc.git --recursive
 ```
 
 ## Prepare config
