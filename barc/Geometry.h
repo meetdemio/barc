@@ -25,17 +25,16 @@ class CssLayoutEngine;
 namespace Layout {
     const std::string kHorizontalPresentation =
     R"(stream {
-    float:left;
-    margin-top: 80%;
+    float:none;
+    top:0;
 width: 20%;
 height: 20%;
 object-fit: cover;
 }
 stream.focus {
 position: absolute;
-top: 0;
 left: 0;
-margin-top: 0px;
+margin-top:20%;
 height: 80%;
 width: 100%;
 object-fit: contain;
