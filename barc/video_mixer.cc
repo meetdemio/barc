@@ -54,9 +54,7 @@ static void do_auto_layout(struct video_mixer_s* pthis,
     }
   }
 
-  if (has_focus && non_focus_count < 2) {
-    pthis->layout->setStyleSheet(Layout::kPip);
-  } else if (has_focus && non_focus_count > 1) {
+ if (has_focus) {
     pthis->layout->setStyleSheet(Layout::kHorizontalPresentation);
   } else {
     pthis->layout->setStyleSheet(Layout::kBestfitCss);
