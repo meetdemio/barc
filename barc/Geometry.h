@@ -23,7 +23,28 @@ class CssLayoutEngine;
 #include "object_fit.h"
 
 namespace Layout {
-    const std::string kHorizontalPresentation =
+
+const std::string kAudioPresentation =
+R"(
+archive{
+    text-align:center;
+}
+stream.audio_only{
+width:0;
+height:0;
+}
+stream.focus {
+    display:block;
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    height:100%;
+    width: 100%;
+    object-fit: contain;
+})";
+    
+const std::string kHorizontalPresentation =
     R"(
 archive{
 text-align:center;
@@ -34,6 +55,10 @@ top:0;
 width: 20%;
 height:20%;
 object-fit: cover;
+}
+stream.audio_only{
+width:0;
+height:0;
 }
 stream.focus {
 display:block;

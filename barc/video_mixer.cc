@@ -46,16 +46,25 @@ static void do_auto_layout(struct video_mixer_s* pthis,
 {
   char has_focus = 0;
   int non_focus_count = 0;
+  int has_webcam = 0;
+    
   for (auto info : stream_info) {
     if (0 == strcmp(info.layout_class().c_str(), "focus")) {
       has_focus = 1;
     } else {
       non_focus_count++;
     }
+    //count number of audio only streams / webcam streams
+    if(0 != strcmp(info.layout_class().c_str(), "audio_only")){
+        has_webcam++;
+    }
   }
 
  if (has_focus) {
-    pthis->layout->setStyleSheet(Layout::kHorizontalPresentation);
+     if(has_webcam == 0)
+         pthis->layout->setStyleSheet(Layout::kAudioPresentation);
+     else
+         pthis->layout->setStyleSheet(Layout::kHorizontalPresentation);
   } else {
     pthis->layout->setStyleSheet(Layout::kBestfitCss);
   }
