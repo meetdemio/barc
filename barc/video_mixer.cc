@@ -53,11 +53,13 @@ static void do_auto_layout(struct video_mixer_s* pthis,
       has_focus = 1;
     } else {
       non_focus_count++;
+        
+        //count number of audio only streams / webcam streams
+        if(0 != strcmp(info.layout_class().c_str(), "audio_only")){
+            has_webcam++;
+        }
     }
-    //count number of audio only streams / webcam streams
-    if(0 != strcmp(info.layout_class().c_str(), "audio_only")){
-        has_webcam++;
-    }
+   
   }
 
  if (has_focus) {
