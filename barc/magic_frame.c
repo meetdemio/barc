@@ -36,7 +36,7 @@ int magic_frame_start(MagickWand** output_wand,
     PixelWand* background = NewPixelWand();
     // set background for layout debugging
     //PixelSetGreen(background, 1.0);
-    //PixelSetColor(background, "white");
+    PixelSetColor(background, "#f5f6f8");
     MagickNewImage(*output_wand, out_width, out_height, background);
     DestroyPixelWand(background);
     return 0;
