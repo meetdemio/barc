@@ -118,6 +118,7 @@ int magic_frame_add(MagickWand* output_wand,
 
     // background on image color for scale/crop debugging
     PixelWand* background = NewPixelWand();
+    PixelSetColor(background, "#f5f6f8");
     // change the color to something with an active alpha channel if you need
     // to see what's happening with the image processor
     //PixelSetColor(background, "none");
