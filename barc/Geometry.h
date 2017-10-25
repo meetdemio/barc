@@ -55,10 +55,12 @@ top:0;
 width: 20%;
 height:20%;
 object-fit: cover;
+z-index:100;
 }
 stream.audio_only{
 width:0;
 height:0;
+z-index:-1;
 }
 stream.focus {
 display:block;
@@ -69,6 +71,7 @@ margin-top:20%;
 height: 80%;
 width: 100%;
 object-fit: contain;
+z-index:100;
 })";
 
 const std::string kPip =
