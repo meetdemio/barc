@@ -36,7 +36,7 @@ int magic_frame_start(MagickWand** output_wand,
     PixelWand* background = NewPixelWand();
     // set background for layout debugging
     //PixelSetGreen(background, 1.0);
-    PixelSetColor(background, "white");
+   // PixelSetColor(background, "white");
     MagickNewImage(*output_wand, out_width, out_height, background);
     DestroyPixelWand(background);
     return 0;
@@ -118,7 +118,7 @@ int magic_frame_add(MagickWand* output_wand,
 
     // background on image color for scale/crop debugging
     PixelWand* background = NewPixelWand();
-    PixelSetColor(background, "white");
+   // PixelSetColor(background, "white");
     // change the color to something with an active alpha channel if you need
     // to see what's happening with the image processor
     //PixelSetColor(background, "none");
